@@ -47,8 +47,8 @@ class MyHomePage extends StatelessWidget {
                             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                             children: [
                               Icon(Icons.home, size: 30, color: Colors.green),
-                              Icon(Icons.search, size: 30, color: Colors.orange),
-                              Icon(Icons.settings, size: 30, color: Colors.purple),
+                              Icon(Icons.settings, size: 30, color: Colors.orange),
+                              Icon(Icons.search, size: 30, color: Colors.purple),
                             ],
                           ),
                           const SizedBox(height: 20),
@@ -79,6 +79,26 @@ class MyHomePage extends StatelessWidget {
                         color: Colors.white,
                         border: Border.all(color: Colors.black),
                         borderRadius: BorderRadius.circular(10),
+                      ),
+                      child: const Column(
+                        children: [
+                          Text(
+                            'Cuaca',
+                            style: TextStyle(
+                              fontSize: 18,
+                              fontWeight: FontWeight.bold,
+                              color: Colors.blue,
+                            ),
+                          ),
+                          SizedBox(height: 5),
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            children: [
+                              Text('29°C'),
+                              Icon(Icons.cloud, size: 20, color: Colors.grey),
+                            ],
+                          ),
+                        ],
                       ),
                     ),
                   ),
