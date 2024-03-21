@@ -105,7 +105,69 @@ class MyHomePage extends StatelessWidget {
                 ],
               ),
               const SizedBox(height: 20),
+              Card(
+                elevation: 3,
+                child: Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text(
+                        'ListView Widget',
+                        style: Theme.of(context).textTheme.titleLarge,
+                      ),
+                      const SizedBox(height: 10),
+                      ListView.builder(
+                        shrinkWrap: true,
+                        itemCount: 5,
+                        itemBuilder: (BuildContext context, int index) {
+                          int itemNumber = index + 1;
+                          return ListTile(
+                            title: Text('ListView $itemNumber'),
+                            leading: const Icon(Icons.list),
+                            trailing: const Icon(Icons.arrow_forward),
+                          );
+                        },
+                      ),
+                    ],
+                  ),
+                ),
+              ),
               const SizedBox(height: 20),
+               Card(
+                elevation: 3,
+                child: Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text(
+                        'GridView Widget',
+                        style: Theme.of(context).textTheme.titleLarge,
+                      ),
+                      const SizedBox(height: 10),
+                      GridView.builder(
+                        shrinkWrap: true,
+                        gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+                          crossAxisCount: 2,
+                          crossAxisSpacing: 10,
+                          mainAxisSpacing: 10,
+                        ),
+                        itemCount: 4,
+                        itemBuilder: (BuildContext context, int index) {
+                          int itemNumber = index + 1;
+                          return Card(
+                            elevation: 3,
+                            child: Center(
+                              child: Text('GridView $itemNumber'),
+                            ),
+                          );
+                        },
+                      ),
+                    ],
+                  ),
+                ),
+              ),
             ],
           ),
         ),
